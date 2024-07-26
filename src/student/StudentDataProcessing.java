@@ -2,6 +2,8 @@ package student;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+import java.util.OptionalInt;
 import java.util.stream.Collectors;
 
 public class StudentDataProcessing {
@@ -33,9 +35,21 @@ public class StudentDataProcessing {
 
         System.out.println("List of students with name starts with A "+ studentsWithFirstNameA);
 
+        System.out.println("=================");
 
+        Map<String,List<Student>> mapData = StudentDataOperations.groupByDepartmentNames(list);
+        System.out.println(mapData);
 
+        System.out.println("===============");
+        long count = StudentDataOperations.countOfStudent(list);
+        System.out.println(count);
 
+        System.out.println("====================");
+        OptionalInt maxAge = StudentDataOperations.maxAge(list);
+        System.out.println(maxAge.getAsInt());
+
+        System.out.println("=================");
+        System.out.println(StudentDataOperations.departmentNames(list));
     }
 
 

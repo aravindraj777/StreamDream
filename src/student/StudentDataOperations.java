@@ -2,6 +2,7 @@ package student;
 
 import java.util.List;
 import java.util.Map;
+import java.util.OptionalInt;
 import java.util.stream.Collectors;
 
 public class StudentDataOperations {
@@ -15,6 +16,16 @@ public class StudentDataOperations {
 //     Find the total count of student using stream
     public static long countOfStudent(List<Student> studentList){
         return studentList.size();
+    }
+
+//    Find the max age of student
+    public static OptionalInt maxAge (List<Student> studentList){
+        return studentList.stream().mapToInt(Student::getAge).max();
+    }
+
+    public static List<String> departmentNames(List<Student> studentList){
+        return studentList.stream().map(Student::getDepartmentName).distinct()
+                          .collect(Collectors.toList());
     }
 
 
