@@ -11,4 +11,11 @@ public class StudentDataOperations {
         return studentList.stream()
                 .collect(Collectors.groupingBy(Student::getDepartmentName));
     }
+
+//     Find the total count of student using stream
+    public static long countOfStudent(List<Student> studentList){
+        return studentList.size();
+    }
+
+
 }
