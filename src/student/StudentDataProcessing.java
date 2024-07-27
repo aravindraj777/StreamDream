@@ -61,6 +61,10 @@ public class StudentDataProcessing {
         System.out.println("=============");
         List<Student> students = StudentDataOperations.lstStu(list);
         System.out.println(students);
+
+        System.out.println("================");
+        Map<String,Double> avgGenderAge = StudentDataOperations.mapAvgAge(list);
+        System.out.println(avgGenderAge);
     }
 
 

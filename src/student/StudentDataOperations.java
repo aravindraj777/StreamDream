@@ -49,5 +49,16 @@ public class StudentDataOperations {
                 .collect(Collectors.toList());
     }
 
+//    Find the average age of male and female students
+    public static Map<String,Double> mapAvgAge(List<Student> studentList){
+        return studentList.stream()
+                .collect(
+                        Collectors
+                                .groupingBy(
+                                        Student::getGender,
+                                        Collectors.averagingInt(
+                                                Student::getAge)));
+    }
+
 
 }
