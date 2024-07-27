@@ -54,6 +54,9 @@ public class StudentDataProcessing {
         System.out.println("=========");
         Map<String,Long> getStudentCountOfDept = StudentDataOperations.countOfStudentsInEachDepartment(list);
         System.out.println(getStudentCountOfDept);
+
+        System.out.println("========");
+        System.out.println(StudentDataOperations.studentListLessThanThirty(list));
     }
 
 

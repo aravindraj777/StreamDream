@@ -38,5 +38,10 @@ public class StudentDataOperations {
                 );
     }
 
+//    Find the list of students whose age is less than 30
+    public static List<Student> studentListLessThanThirty(List<Student> studentList){
+        return studentList.stream().filter(student -> student.getAge() < 30).collect(Collectors.toList());
+    }
+
 
 }
