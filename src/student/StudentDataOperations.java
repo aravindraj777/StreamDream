@@ -43,5 +43,11 @@ public class StudentDataOperations {
         return studentList.stream().filter(student -> student.getAge() < 30).collect(Collectors.toList());
     }
 
+//    Find the list of students whose rank is in between 50 and 100
+    public static List<Student> lstStu(List<Student> studentList){
+        return studentList.stream().filter(student -> student.getRank() > 50 && student.getRank() < 100)
+                .collect(Collectors.toList());
+    }
+
 
 }

@@ -57,6 +57,10 @@ public class StudentDataProcessing {
 
         System.out.println("========");
         System.out.println(StudentDataOperations.studentListLessThanThirty(list));
+
+        System.out.println("=============");
+        List<Student> students = StudentDataOperations.lstStu(list);
+        System.out.println(students);
     }
 
 
