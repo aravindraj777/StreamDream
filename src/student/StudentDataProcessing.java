@@ -50,6 +50,10 @@ public class StudentDataProcessing {
 
         System.out.println("=================");
         System.out.println(StudentDataOperations.departmentNames(list));
+
+        System.out.println("=========");
+        Map<String,Long> getStudentCountOfDept = StudentDataOperations.countOfStudentsInEachDepartment(list);
+        System.out.println(getStudentCountOfDept);
     }
 
 

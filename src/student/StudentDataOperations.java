@@ -28,5 +28,15 @@ public class StudentDataOperations {
                           .collect(Collectors.toList());
     }
 
+//    Find the count of student in each department
+    public static Map<String,Long> countOfStudentsInEachDepartment(List<Student> studentList){
+        return studentList.stream()
+                .collect(
+                        Collectors.groupingBy(
+                                Student::getDepartmentName,
+                                Collectors.counting())
+                );
+    }
+
 
 }
