@@ -21,6 +21,13 @@ public class FilterClass {
         Person streamPerson = personList.stream().filter(p->p.getName().equals("Vishnu")).findAny().orElse(null);
         System.out.println(streamPerson);
 
+
+//        Filter by age and name combined
+        Person filteredByAgeAndName = personList.stream()
+                .filter(p->p.getName().equals("Srikand") && p.getAge() == 29).findAny().orElse(null);
+
+        System.out.println(filteredByAgeAndName);
+
     }
 
     private Person getPersonByName(List<Person> personList, String name){
