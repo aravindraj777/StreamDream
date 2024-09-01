@@ -17,6 +17,10 @@ public class FilterClass {
         Person person = filterClassObj.getPersonByName(personList,"Vishnu");
         System.out.println(person);
 
+//        Using stream
+        Person streamPerson = personList.stream().filter(p->p.getName().equals("Vishnu")).findAny().orElse(null);
+        System.out.println(streamPerson);
+
     }
 
     private Person getPersonByName(List<Person> personList, String name){
