@@ -28,6 +28,14 @@ public class FilterClass {
 
         System.out.println(filteredByAgeAndName);
 
+
+//        Convert stream of person in to stream of string
+        String personName = personList.stream()
+                .filter(persons-> persons.getName().equals("Vishnu"))
+                .map(Person::getName)
+                .findAny().orElse(null);
+
+        System.out.println("Converted stream find the person name is "+ personName);
     }
 
     private Person getPersonByName(List<Person> personList, String name){
