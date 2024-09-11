@@ -3,6 +3,7 @@ package medium;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class FindFirstElement {
 
@@ -12,6 +13,10 @@ public class FindFirstElement {
         System.out.println("First element is "+ findFirstElement(integerList).get());
         System.out.println("Count of elements is  "+ findCountOfElements(integerList));
         System.out.println("Maximum amount is "+ findMaximum(integerList).get());
+
+        System.out.println("-----------------------------");
+        System.out.println("Sorted list");
+        sortList(integerList).forEach(System.out::println);
     }
 
     private static Optional<Integer> findFirstElement(List<Integer> integerList){
@@ -27,5 +32,11 @@ public class FindFirstElement {
     private static Optional<Integer> findMaximum(List<Integer> integerList){
       return   integerList.stream()
                 .max(Integer::compare);
+    }
+
+    private static List<Integer> sortList(List<Integer> integerList){
+        return integerList.stream().distinct()
+                .sorted()
+                .collect(Collectors.toList());
     }
 }
