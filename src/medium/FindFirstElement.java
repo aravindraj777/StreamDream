@@ -11,6 +11,7 @@ public class FindFirstElement {
         List<Integer> integerList = Arrays.asList(11,2,4,5,6,4,3,22,2,3);
         System.out.println("First element is "+ findFirstElement(integerList).get());
         System.out.println("Count of elements is  "+ findCountOfElements(integerList));
+        System.out.println("Maximum amount is "+ findMaximum(integerList).get());
     }
 
     private static Optional<Integer> findFirstElement(List<Integer> integerList){
@@ -21,5 +22,10 @@ public class FindFirstElement {
     private static long findCountOfElements(List<Integer> integerList){
 
         return integerList.size();
+    }
+
+    private static Optional<Integer> findMaximum(List<Integer> integerList){
+      return   integerList.stream()
+                .max(Integer::compare);
     }
 }
