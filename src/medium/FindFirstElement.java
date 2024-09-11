@@ -1,8 +1,6 @@
 package medium;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class FindFirstElement {
@@ -17,6 +15,9 @@ public class FindFirstElement {
         System.out.println("-----------------------------");
         System.out.println("Sorted list");
         sortList(integerList).forEach(System.out::println);
+        System.out.println("------------------------------");
+        System.out.println("Reverse order sorting ");
+        sortInDescending(integerList).forEach(System.out::println);
     }
 
     private static Optional<Integer> findFirstElement(List<Integer> integerList){
@@ -37,6 +38,13 @@ public class FindFirstElement {
     private static List<Integer> sortList(List<Integer> integerList){
         return integerList.stream().distinct()
                 .sorted()
+                .collect(Collectors.toList());
+    }
+
+    private static List<Integer> sortInDescending(List<Integer> integerList){
+        return integerList.stream()
+                .distinct()
+                .sorted(Collections.reverseOrder())
                 .collect(Collectors.toList());
     }
 }
